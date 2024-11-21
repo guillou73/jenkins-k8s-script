@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-flask-ui-deployment
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: flask-mysql-app
+
+spec:
+  selector:
+    matchLabels:
+      name: flask-app-pod
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      name: flask-ui-pod
+      labels:
+        name: flask-app-pod
+    spec:
+      containers:
+        - name: web-app
+          image: {{ .Values.flask.repository }}:{{ .Values.flask.tag }}
+          ports:
+            - containerPort: 5000
+          imagePullPolicy: {{ .Values.flask.pullPolicy }}
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-env-config-app
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: {{ .Release.Name }}-env-config-app
+    namespace:  {{ .Values.namespace }}
+data:
+    PASSWORD: {{ .Values.environment.password }}
+    MYSQL_USER: {{ .Values.environment.mysqluser }}
+    MYSQL_PASSWORD: {{ .Values.environment.mysqlpassword }}
+    MYSQL_HOST: {{ .Release.Name }}-mysql-service:{{ .Values.environment.mysqlport }}
+    SECRET_KEY: {{ .Values.environment.secretkey }}
+

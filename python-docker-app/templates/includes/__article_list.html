@@ -1,0 +1,47 @@
+<div class="container">
+  <h3>Articles List</h3>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.No</th>
+        <th scope="col">Article Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+      <tr>
+        <th scope="row">{{ loop.index }}</th>
+        <td>{{ article.title}}</td>
+        <td>{{ article.author}}</td>
+        <td><a class="btn btn-success" href="{{ url_for('edit', id=article.id)}}" role="button"><i class="fa fa-pencil-square-o mr-2" aria-hidden="true"></i>
+          Edit</a></td>
+        <!-- <td><a class="btn btn-danger" href="{{ url_for('delete', id=article.id)}}" role="button">Delete</a></td> -->
+        <td><button type="button" class="btn btn-danger open_modal" data-toggle="modal" data-id ="{{ article.id}}" data-target="#myModal"><i class="fa fa-trash mr-2" aria-hidden="true"></i>Delete</button></td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure to delete the article?</p>
+        </div>
+        <div class="modal-footer">
+          <a class="btn btn-success" id="confirm"  role="button"><i class="fa fa-check-square-o mr-2" aria-hidden="true"></i>Confirm</a>
+          <button type="button" class="btn btn-success close_modal" data-dismiss="modal"><i class="fa fa-times mr-2" aria-hidden="true"></i>Cancel</button>  
+        </div>
+      </div>
+  
+    </div>
+  </div>
+</div>

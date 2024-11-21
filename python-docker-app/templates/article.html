@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+<div class="container shadow-none" >
+
+{% if content %}
+<div class="card my-3 border-0 pt-3" style="background-color:#eeeeee;">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <img src="https://picsum.photos/id/1025/367/267" class="card-img-top" alt="...">
+        </div>
+    </div>
+   
+    <div class="card-body">
+      <h2 class="card-title font-weight-bold">{{ content.title}}
+      </h2>
+      <p>This artcile is written by <mark><em>{{ content.author }}</em></mark> on {{content.pub_date}}</p>
+   
+      <p class="card-text">{{ content.body | safe}}
+      </p>
+      <p class="text-right">
+        <a class="btn btn-primary text-right" href="{{ url_for('articles')}}" role="button">Back to articles</a>
+      </p>
+      
+    </div>
+  </div>
+    
+
+{% endif %}
+</div>
+
+{% endblock %}
+
+
+<style>
+    body{
+        background: #dbdce6;
+    }
+</style>

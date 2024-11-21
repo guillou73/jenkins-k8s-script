@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-service
+  labels:
+    app: flask-mysql-app
+spec:
+  selector:
+    name: flask-app-pod
+  type: NodePort
+  ports:
+    - name: http-port
+      port: 8080
+      targetPort: 5000
+      nodePort: 32000

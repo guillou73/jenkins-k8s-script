@@ -1,0 +1,34 @@
+.nav-bg{
+    background-color: #283747 ;
+}
+
+.prim-btn{
+    background-color: #9482ff  !important;
+}
+
+.secon-btn{
+    background-color: #f18b9a !important;
+}
+
+.login-fonts{
+    font-size:120%;
+    font-style: Roboto;
+    font-weight: bold;
+}
+
+.bg-gradient{
+    background:conic-gradient(from 90deg at 0% 100%, rgba(219, 220, 230, 1) 96%, rgba(54, 87, 123, 1) 96%, rgba(81, 120, 152, 1) 98%);;
+}
+
+.box{
+    background: whitesmoke;
+}
+
+.btn-primary{
+    background-color:rgb(103, 114, 128) !important;
+    border-radius:5px !important;
+    -moz-border-radius:5px !important;
+    -webkit-border-radius:5px  !important;
+    border:1px solid #718caf !important;
+
+}

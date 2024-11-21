@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: db-config
+  namespace: flask-app
+data:
+  host: localhost
+  port: "3306"
+  user: root
+  password: password
+  database: flask_articles

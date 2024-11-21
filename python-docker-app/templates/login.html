@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+<div class="container mx-auto">
+<div class="row mt-5 pt-3">
+  <div class="col-sm-12 col-md -6 shadow-lg rounded box">
+    <img src="{{ url_for('static', filename = 'images/Login.svg')}}" class="img-fluid" alt="Responsive image">
+  </div>
+  <div class="col-sm-12 col-md-6 shadow-sm rounded ml-2 box">
+    <div class="m-4 pt-5 ">
+      <h2 class="display-5 text-center box">Login</h2>
+      <form action="" method="POST">
+        <div class="form-group">
+          <label for="Username"><span class="login-fonts"> Username</span></label>
+          <input type="text" class="form-control" id="username" name="username" value ="{{request.form.username}}" aria-describedby="username">
+          <small id="username" class="form-text text-muted">We'll never share your username with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1"><span class="login-fonts">Password</span></label>
+          <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+        </div>
+    
+        <button type="submit" class="btn btn-primary "> <i class="fa fa-sign-in mr-2" aria-hidden="true"></i>Login</button>
+        <a class="ml-4" href="{{ url_for('register')}}" >Forgot password?</a>
+      </form>
+      
+        <hr class="mt-2">
+        <h5 class="text-muted">If you don't have account <a class="" href="{{ url_for('register')}}" >SignUp</a> here</h5>
+    </div>
+  </div>
+</div>
+
+<p class="my-5"></p>
+<p class="my-5 text-center"></p>
+</div>
+
+<style>
+
+  body{
+      background:conic-gradient(from 90deg at 0% 100%, rgba(219, 220, 230, 1) 96%, rgba(54, 87, 123, 1) 96%, rgba(81, 120, 152, 1) 98%);;
+      overflow-x: hidden;
+  }
+</style>
+{% endblock %}

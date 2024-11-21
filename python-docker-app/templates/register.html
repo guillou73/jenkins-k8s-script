@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+
+{% from 'includes/__formhelpers.html' import render_field %}
+
+
+    <div class="row ">
+        <div class="col-md-4 offset-md-4  py-4">
+            <div class="border border-3  my-3 p-3 rounded shadow-sm box ">
+                <h3 class="display-5 text-center ">Register</h3>
+                <form action="" method="post">
+                    <div class="form-group">
+                        {{ render_field(form.name, class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ render_field(form.username, class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ render_field(form.email, class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ render_field(form.password, class="form-control") }}
+                    </div>
+                    <div class="form-group">
+                        {{ render_field(form.confirm, class="form-control") }}
+                    </div>
+                    <input type="submit" class="btn btn-primary text-center btn-block" value="SignUp">
+                </form>
+                   
+                </form>
+                <hr class="my-2">
+                <p class="text-muted"> If you have an account click below</p>
+                <a class="btn btn-success text-center btn-block" href="{{ url_for('login') }}" role='button'>SignIn</a>
+
+            </div>
+        </div>
+    </div>
+
+    <style>
+
+        body{
+            background:conic-gradient(from 90deg at 0% 100%, rgba(219, 220, 230, 1) 96%, rgba(54, 87, 123, 1) 96%, rgba(81, 120, 152, 1) 98%);;
+            overflow-x: hidden;
+        }
+    </style>
+
+
+{% endblock %}
