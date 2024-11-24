@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_REGISTRY = "gaetanneo"
+        DOCKER_REGISTRY = "guillou73"
         APP_NAME = "flask-app"
         DB_NAME = "mysql-db"
         VERSION = "${BUILD_NUMBER}"
