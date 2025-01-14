@@ -67,7 +67,7 @@ resource "aws_security_group" "k8s_sg" {
 
 resource "aws_instance" "k8s_master" {
   ami           = "ami-005fc0f236362e99f"
-  instance_type = "t2.medium"
+  instance_type = "t3.medium"
 
   vpc_security_group_ids = [aws_security_group.k8s_sg.id]
   key_name              = var.key_pair_name
