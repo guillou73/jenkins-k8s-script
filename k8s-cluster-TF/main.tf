@@ -61,7 +61,7 @@ resource "aws_security_group" "k8s_sg" {
   }
 
   tags = {
-    Name = "kubernetes-sg"
+    Name = "k8s_sg"
   }
 }
 
